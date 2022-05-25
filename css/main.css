@@ -1,20 +1,52 @@
-body{
+body {
     background-color: aliceblue;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+
 h1 {
     color: brown;
 }
-table{
-    margin: auto;
+
+table {
+    margin: 30px auto;
     /* width: 300px;
     height: 300px; */
 }
-td{
-    width: 100px;
-    height: 100px;
+
+td {
+    width: 50px;
+    height: 50px;
     background-color: rgb(220, 220, 220);
 }
-.shown{
+
+.shown {
     background-color: rgb(189, 189, 189);
+}
+
+.smiley {
+    font-size: 50px;
+}
+
+button {
+    background-color: #2196f3;
+    width: 90px;
+    height: 30px;
+    border: 1px black solid;
+    border-radius: 3%;
+}
+
+.lives {
+    margin: 15px auto;
+    color: blueviolet;
+    font-weight: 700;
+}
+.hints {
+    font-size: 50px;
+}
+
+footer {
+    font-size: 13px;
+    position: fixed;
+    bottom: 5px;
 }
