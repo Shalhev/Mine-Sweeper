@@ -1,0 +1,20 @@
+body{
+    background-color: aliceblue;
+    text-align: center;
+}
+h1 {
+    color: brown;
+}
+table{
+    margin: auto;
+    /* width: 300px;
+    height: 300px; */
+}
+td{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(220, 220, 220);
+}
+.shown{
+    background-color: rgb(189, 189, 189);
+}
