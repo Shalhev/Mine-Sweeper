@@ -1,52 +1,124 @@
+* {
+    margin: auto;
+}
+
 body {
     background-color: aliceblue;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #E9C46A;
+    color: #FFF;
 }
-
 h1 {
     color: brown;
 }
 
+nav {
+    display: flex;
+    background-color: #333;
+    width: 650px;
+    height: 93px;
+    margin: 15px auto;
+    justify-content: space-around;
+}
+
+.timer {
+    display: inline-block;
+}
+
+.smiley {
+    font-size: 50px;
+    margin: 10px auto;
+    width: 100px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lives {
+    margin: auto;
+    font-size: 30px;
+    max-width: 130px;
+    min-width: 123px;
+}
+
+.hints {
+    margin: auto;
+    font-size: 40px;
+    display: inline-block;
+    text-align: center;
+    /* padding: 20px; */
+    min-width: 122px;
+}
+.clicked{
+    color: yellow;
+}
+.hint1{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 48px;
+}
+.hint2{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 48px;
+}
+.hint3{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 48px;
+}
+
 table {
     margin: 30px auto;
-    /* width: 300px;
-    height: 300px; */
+    /* max-width: 300px;
+    max-height: 300px; */
 }
 
 td {
     width: 50px;
     height: 50px;
-    background-color: rgb(220, 220, 220);
+    background-color: #2a9d90;
+}
+
+td:hover {
+    background-color: #04b9a4;
 }
 
 .shown {
-    background-color: rgb(189, 189, 189);
+    background-color: #264653;
 }
 
-.smiley {
-    font-size: 50px;
-}
+
 
 button {
     background-color: #2196f3;
-    width: 90px;
+    width: 100px;
     height: 30px;
     border: 1px black solid;
     border-radius: 3%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.lives {
-    margin: 15px auto;
-    color: blueviolet;
-    font-weight: 700;
+button:hover {
+    background-color: #60aff0;
+    width: 140px;
 }
-.hints {
-    font-size: 50px;
+
+
+
+.safe-click {
+    background-color: rgb(223, 223, 223);
 }
+
 
 footer {
-    font-size: 13px;
     position: fixed;
+    left: 5px;
     bottom: 5px;
+    color: black;
 }
