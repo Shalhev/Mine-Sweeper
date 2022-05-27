@@ -41,6 +41,7 @@ function initGame() {
     livesLeft()
     clearInterval(gTimer)
     resetHintCount()
+    closeMsgBox()
 
 }
 
@@ -99,14 +100,15 @@ function renderBoard() {
     strHTML += '</tbody></table>';
     var elContainer = document.querySelector('.table');
     elContainer.innerHTML = strHTML;
+
+    //// NOTE: UNDO STEPS
     // if (isBackStep) return
-    // var boardCopy = gBoard.slice()
+    // var boardCopy = Object.assign([], gBoard);
     // var gameCopy = Object.assign({}, gGame);
-    // gSteps.push(boardCopy, gameCopy)
+    // // gSteps.push(boardCopy)
     // var step = { board: boardCopy, game: gameCopy }
-    // console.log('step.borad', step.board);
     // gSteps.push(step)
-    // console.log(gSteps);
+    // console.log('step.borad', step.board);
     // console.log(gSteps);
 
 }
@@ -167,6 +169,7 @@ function checkGameOver() {
         gGame.isOn = false
         gGame.isWin = true
         console.log('WINN!');
+        openMsgBox()
         timerEnd()
         smiley()
 
@@ -245,9 +248,7 @@ function livesLeft() {
         gGame.isOn = false
         showAllMines()
         timerEnd()
-        console.log('GAME OVER!');
-        elLives.innerHTML = 'GAME OVER!'
-        elLives.style.color = 'red'
+        openMsgBox()
         return
     }
     for (var i = 0; i < gGame.lives; i++) {
@@ -287,7 +288,6 @@ function hintOn(rowIdx, colIdx) {
         }
     }
     renderBoard()
-    // hintCount()
     setTimeout(hintOff, 1000, hintCells)
 }
 function hintOff(hintCells) {
@@ -352,6 +352,26 @@ function undoStep() {
     gBoard = step.board
     gGame = step.game
     renderBoard()
+    livesLeft()
+}
+
+function openMsgBox() {
+    var elBox = document.querySelector('.msg-box')
+    var elBoxText = document.querySelector('.msg-text')
+    elBox.style.display = 'flex'
+    if (gGame.lives === 0) {
+        elBoxText.innerText = 'GAME OVER!'
+        elBoxText.style.color = 'red'
+    }
+
+    if(gGame.isWin){
+        elBoxText.innerText = 'WINNER!'
+        elBoxText.style.color = '#2fff00'
+    }
+}
+function closeMsgBox() {
+    var elBox = document.querySelector('.msg-box')
+    elBox.style.display = 'none'
 }
 
 function renderCell(location, value) {
@@ -369,7 +389,7 @@ function timerRun() {
     if (isTimerOn) {
         var end = new Date
         var time = (end - gStart) / 1000
-        // gGame.secsPassed = time
+        gGame.secsPassed = time
         var eltime = document.querySelector('.timer span')
         eltime.innerText = parseInt(time)
     }
