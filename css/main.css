@@ -6,7 +6,7 @@ body {
     background-color: aliceblue;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(/imgs/background.png);
+    background-image: url(../imgs/background.png);
     background-size: cover;
     background-attachment: fixed;
     color: #FFF;
