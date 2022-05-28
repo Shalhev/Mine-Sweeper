@@ -117,6 +117,7 @@ button {
     border-radius: 3%;
     cursor: pointer;
     transition: 0.3s;
+    color: black
 }
 
 button:hover {
